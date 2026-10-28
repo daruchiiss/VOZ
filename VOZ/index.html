@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inicio · VOZ — Lo que nadie está contando</title>
+  <meta name="description" content="VOZ es una plataforma de periodismo e investigación ciudadana que cuestiona lo cotidiano con evidencias verificables.">
+  <meta name="author" content="darany ramirez">
+  <meta name="theme-color" content="#694A47">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;0,9..144,800;1,9..144,500;1,9..144,700&family=Source+Sans+3:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="css/estilos.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body id="top">
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+  <header class="site-header">
+    <div class="container header-in">
+      <a class="logo" href="index.html" aria-label="VOZ — Lo que nadie está contando. Ir al inicio">
+        <span class="logo__word">VOZ</span>
+        <span class="logo__tag">Lo que nadie está contando</span>
+      </a>
+      <nav class="nav" id="menu-principal" aria-label="Navegación principal">
+        <ul>
+          <li><a href="index.html" aria-current="page">Inicio</a></li>
+          <li><a href="investigaciones.html">Investigaciones</a></li>
+          <li><a href="evidencias.html">Evidencias</a></li>
+          <li><a href="participa.html">Participa</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn search-btn" type="button" data-buscar aria-label="Buscar en VOZ"><span data-icon="buscar"></span></button>
+        <button class="icon-btn menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">
+          <span class="sr-only">Menú</span><span class="menu-toggle__bars" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section class="hero" aria-labelledby="hero-titulo">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="eyebrow">Investigación destacada</p>
+          <h1 id="hero-titulo">¿Qué hemos <em>normalizado</em> sin cuestionarlo?</h1>
+          <p class="lead">Exploramos los problemas cotidianos que merecen respuestas: investigamos con fuentes verificables y te mostramos qué sabemos, qué dicen las personas y qué falta por saber.</p>
+          <div class="btn-row">
+            <a class="btn btn-primario" href="investigaciones.html#el-transporte-que-nunca-llega">Ver investigación <span data-icon="flecha"></span></a>
+            <a class="btn btn-borde" href="nosotros.html">Conoce VOZ</a>
+          </div>
+          <ul class="temas" aria-label="Temas que investigamos">
+            <li>Temas</li>
+            <li><a href="investigaciones.html?cat=educacion">Educación</a></li>
+            <li><a href="investigaciones.html?cat=movilidad">Movilidad</a></li>
+            <li><a href="investigaciones.html?cat=servicios">Servicios</a></li>
+            <li><a href="investigaciones.html?cat=medioambiente">Medioambiente</a></li>
+            <li><a href="investigaciones.html?cat=sociedad">Sociedad</a></li>
+          </ul>
+        </div>
+        <figure class="hero-fig">
+          <img class="hero-marca" src="img/marca.svg" alt="" width="92" height="84">
+          <div class="ph ph--hero" role="img" aria-label="Espacio reservado para la fotografía de la investigación destacada">
+            <span data-icon="imagen"></span><span class="ph__txt">Fotografía · espacio reservado</span>
+          </div>
+          <figcaption>Destacada: «El transporte que nunca llega» (ficha ilustrativa).</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="recientes-titulo">
+      <div class="container">
+        <div class="sec-head">
+          <h2 id="recientes-titulo">Investigaciones recientes</h2>
+          <a class="link-flecha" href="investigaciones.html">Ver todas <span data-icon="flecha"></span></a>
+        </div>
+        <div class="grid-cards" id="recientes">
+          <noscript><p>Activa JavaScript para ver las tarjetas o consulta el <a href="investigaciones.html">catálogo completo</a>.</p></noscript>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="rigor-titulo" style="padding-top:0">
+      <div class="container">
+        <div class="sec-head">
+          <h2 id="rigor-titulo">Cómo distinguimos lo que sabemos</h2>
+          <a class="link-flecha" href="evidencias.html#metodologia">Nuestra metodología <span data-icon="flecha"></span></a>
+        </div>
+        <div class="leyenda">
+          <div class="leyenda__item"><span class="etq etq--hecho">Hecho comprobado</span><p>Dato respaldado por un documento o una fuente oficial que puedes consultar.</p></div>
+          <div class="leyenda__item"><span class="etq etq--testimonio">Testimonio</span><p>Relato de una persona. Es valioso, pero no sustituye a la evidencia; se publica con consentimiento.</p></div>
+          <div class="leyenda__item"><span class="etq etq--pendiente">Pregunta pendiente</span><p>Lo que aún no sabemos y qué información falta para poder responderlo.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0" aria-label="Invitaciones">
+      <div class="container">
+        <div class="banner banner--azul">
+          <span class="banner__ico" data-icon="megafono"></span>
+          <div class="banner__txt">
+            <h2 style="font-size:1.4rem">Lo que hemos normalizado</h2>
+            <p>Una selección de situaciones cotidianas que merecen ser cuestionadas.</p>
+          </div>
+          <a class="btn btn-primario" href="investigaciones.html">Explorar temas <span data-icon="flecha"></span></a>
+        </div>
+        <div class="banner banner--cafe">
+          <span class="banner__ico" data-icon="usuario"></span>
+          <div class="banner__txt">
+            <h2 style="font-size:1.4rem">¿Tienes algo que contarnos?</h2>
+            <p>Tu experiencia también importa. Propón una investigación o comparte lo que sabes.</p>
+          </div>
+          <a class="btn btn-claro" href="participa.html">Participa <span data-icon="flecha"></span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-in">
+      <div class="footer-brand">
+        <a class="logo" href="index.html" aria-label="VOZ — volver al inicio">
+          <span class="logo__word">VOZ</span>
+          <span class="logo__tag">Lo que nadie está contando</span>
+        </a>
+        <p>Periodismo e investigación ciudadana para cuestionar lo cotidiano, con fuentes que puedes consultar.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Pie de página">
+        <h2 class="footer-h">Explora</h2>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="investigaciones.html">Investigaciones</a></li>
+          <li><a href="evidencias.html">Evidencias</a></li>
+          <li><a href="participa.html">Participa</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+        </ul>
+      </nav>
+      <div class="footer-contacto">
+        <h2 class="footer-h">Contacto</h2>
+        <p>contacto@voz.example</p>
+        <p class="small">Correo de ejemplo: se sustituirá por el real al publicar el proyecto.</p>
+        <p><a href="nosotros.html#contacto">Más datos de contacto</a></p>
+      </div>
+    </div>
+    <div class="container footer-base">
+      <p>© <span data-anio>2026</span> VOZ · Prototipo universitario de demostración. El contenido editorial es ilustrativo y no contiene hallazgos verificados.</p>
+      <a href="index.html">← Volver al inicio</a>
+      <a href="#top">Volver arriba ↑</a>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

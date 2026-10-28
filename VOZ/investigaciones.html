@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Investigaciones · VOZ — Lo que nadie está contando</title>
+  <meta name="description" content="Catálogo de investigaciones de VOZ sobre educación, movilidad, servicios, medioambiente y sociedad.">
+  <meta name="author" content="darany ramirez">
+  <meta name="theme-color" content="#694A47">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;0,9..144,800;1,9..144,500;1,9..144,700&family=Source+Sans+3:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="css/estilos.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body id="top">
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+  <header class="site-header">
+    <div class="container header-in">
+      <a class="logo" href="index.html" aria-label="VOZ — Lo que nadie está contando. Ir al inicio">
+        <span class="logo__word">VOZ</span>
+        <span class="logo__tag">Lo que nadie está contando</span>
+      </a>
+      <nav class="nav" id="menu-principal" aria-label="Navegación principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="investigaciones.html" aria-current="page">Investigaciones</a></li>
+          <li><a href="evidencias.html">Evidencias</a></li>
+          <li><a href="participa.html">Participa</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn search-btn" type="button" data-buscar aria-label="Buscar en VOZ"><span data-icon="buscar"></span></button>
+        <button class="icon-btn menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">
+          <span class="sr-only">Menú</span><span class="menu-toggle__bars" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section class="page-hero" aria-labelledby="titulo-pagina">
+      <div class="container page-hero__grid">
+        <div>
+          <h1 id="titulo-pagina">Investigaciones</h1>
+          <p class="lead">Reportajes, análisis y seguimiento de los problemas que nos afectan. Cada ficha separa hechos comprobados, testimonios y preguntas pendientes.</p>
+          <form class="campo-buscar" id="form-buscar-inv" role="search">
+            <label class="sr-only" for="buscar-inv">Buscar investigaciones</label>
+            <input id="buscar-inv" type="search" placeholder="Buscar investigaciones…" autocomplete="off">
+            <button type="submit" aria-label="Buscar"><span data-icon="buscar"></span></button>
+          </form>
+        </div>
+        <div class="ph" role="img" aria-label="Espacio reservado para una imagen de portada">
+          <span data-icon="imagen"></span><span class="ph__txt">Imagen · espacio reservado</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Catálogo de investigaciones">
+      <div class="container">
+        <p class="aviso"><strong>Contenido ilustrativo.</strong> Las fichas muestran la estructura editorial de VOZ. No contienen hallazgos verificados, cifras ni testimonios reales.</p>
+        <ul class="filtros" id="filtros" aria-label="Filtrar por categoría">
+          <li><button class="filtro" type="button" data-cat="todos" aria-pressed="true">Todos</button></li>
+          <li><button class="filtro" type="button" data-cat="educacion" aria-pressed="false">Educación</button></li>
+          <li><button class="filtro" type="button" data-cat="movilidad" aria-pressed="false">Movilidad</button></li>
+          <li><button class="filtro" type="button" data-cat="servicios" aria-pressed="false">Servicios</button></li>
+          <li><button class="filtro" type="button" data-cat="medioambiente" aria-pressed="false">Medioambiente</button></li>
+          <li><button class="filtro" type="button" data-cat="sociedad" aria-pressed="false">Sociedad</button></li>
+        </ul>
+        <p class="conteo" id="conteo-inv" role="status"></p>
+        <div class="grid-cards" id="grid-inv">
+          <noscript><p>Esta página necesita JavaScript para mostrar y filtrar las investigaciones.</p></noscript>
+        </div>
+        <div class="vacio" id="vacio-inv" hidden>
+          <h2 style="font-size:1.4rem">No hay investigaciones con ese filtro</h2>
+          <p>Prueba con otra categoría o palabra. Si es un tema que falta, <a href="participa.html">propónlo aquí</a>.</p>
+          <button class="btn btn-borde" type="button" id="limpiar-inv">Mostrar todas</button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-in">
+      <div class="footer-brand">
+        <a class="logo" href="index.html" aria-label="VOZ — volver al inicio">
+          <span class="logo__word">VOZ</span>
+          <span class="logo__tag">Lo que nadie está contando</span>
+        </a>
+        <p>Periodismo e investigación ciudadana para cuestionar lo cotidiano, con fuentes que puedes consultar.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Pie de página">
+        <h2 class="footer-h">Explora</h2>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="investigaciones.html">Investigaciones</a></li>
+          <li><a href="evidencias.html">Evidencias</a></li>
+          <li><a href="participa.html">Participa</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+        </ul>
+      </nav>
+      <div class="footer-contacto">
+        <h2 class="footer-h">Contacto</h2>
+        <p>contacto@voz.example</p>
+        <p class="small">Correo de ejemplo: se sustituirá por el real al publicar el proyecto.</p>
+        <p><a href="nosotros.html#contacto">Más datos de contacto</a></p>
+      </div>
+    </div>
+    <div class="container footer-base">
+      <p>© <span data-anio>2026</span> VOZ · Prototipo universitario de demostración. El contenido editorial es ilustrativo y no contiene hallazgos verificados.</p>
+      <a href="index.html">← Volver al inicio</a>
+      <a href="#top">Volver arriba ↑</a>
+    </div>
+  </footer>
+
+  <dialog class="reportaje" id="reportaje" aria-labelledby="rep-titulo">
+    <div class="reportaje__in">
+      <div class="reportaje__bar">
+        <span class="logo__word" aria-hidden="true">VOZ</span>
+        <button class="icon-btn" type="button" data-cerrar aria-label="Cerrar reportaje"><span data-icon="cerrar"></span></button>
+      </div>
+      <div class="rep-main" id="rep-cuerpo"></div>
+    </div>
+  </dialog>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

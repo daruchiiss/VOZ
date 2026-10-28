@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Participa · VOZ — Lo que nadie está contando</title>
+  <meta name="description" content="Propón una investigación, comparte un testimonio o aporta evidencia para VOZ.">
+  <meta name="author" content="darany ramirez">
+  <meta name="theme-color" content="#694A47">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;0,9..144,800;1,9..144,500;1,9..144,700&family=Source+Sans+3:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="css/estilos.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body id="top">
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+  <header class="site-header">
+    <div class="container header-in">
+      <a class="logo" href="index.html" aria-label="VOZ — Lo que nadie está contando. Ir al inicio">
+        <span class="logo__word">VOZ</span>
+        <span class="logo__tag">Lo que nadie está contando</span>
+      </a>
+      <nav class="nav" id="menu-principal" aria-label="Navegación principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="investigaciones.html">Investigaciones</a></li>
+          <li><a href="evidencias.html">Evidencias</a></li>
+          <li><a href="participa.html" aria-current="page">Participa</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn search-btn" type="button" data-buscar aria-label="Buscar en VOZ"><span data-icon="buscar"></span></button>
+        <button class="icon-btn menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">
+          <span class="sr-only">Menú</span><span class="menu-toggle__bars" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section class="page-hero" aria-labelledby="titulo-pagina">
+      <div class="container page-hero__grid">
+        <div>
+          <h1 id="titulo-pagina">Tu voz también cuenta</h1>
+          <p class="lead">¿Hay una situación que debería investigarse? Prepara tu propuesta, tu testimonio o tu evidencia para el equipo de VOZ.</p>
+        </div>
+        <div class="ph" role="img" aria-label="Ilustración reservada"><span data-icon="megafono"></span><span class="ph__txt">Imagen · espacio reservado</span></div>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Formulario de participación">
+      <div class="container">
+        <div class="aviso" role="note">
+          <p><strong>Formulario de demostración.</strong> Este sitio no tiene servidor: lo que escribas <strong>no se envía ni se guarda</strong>. Al terminar podrás ver un borrador, copiarlo o descargarlo para enviarlo tú por otro medio. No incluyas datos sensibles de otras personas.</p>
+        </div>
+
+        <form id="form-participa" class="form-layout" novalidate>
+          <section class="panel" aria-label="Qué quieres compartir">
+            <fieldset aria-describedby="err-tipo">
+              <legend>¿Qué quieres compartir? <span class="sr-only">(obligatorio)</span></legend>
+              <div class="opciones">
+                <label class="opcion"><input type="radio" name="tipo" value="tema"><span>Proponer un tema</span></label>
+                <label class="opcion"><input type="radio" name="tipo" value="testimonio"><span>Compartir un testimonio</span></label>
+                <label class="opcion"><input type="radio" name="tipo" value="evidencia"><span>Aportar evidencia</span></label>
+              </div>
+              <p class="error" id="err-tipo" aria-live="polite" hidden></p>
+            </fieldset>
+            <div class="campo">
+              <label for="tema">Tema relacionado <span class="sr-only">(obligatorio)</span></label>
+              <select id="tema" name="tema" aria-describedby="err-tema">
+                <option value="">Selecciona una categoría…</option>
+                <option value="educacion">Educación</option>
+                <option value="movilidad">Movilidad y transporte</option>
+                <option value="servicios">Servicios públicos</option>
+                <option value="medioambiente">Medioambiente</option>
+                <option value="sociedad">Desigualdades sociales</option>
+                <option value="otro">Otro tema</option>
+              </select>
+              <p class="error" id="err-tema" aria-live="polite" hidden></p>
+            </div>
+          </section>
+
+          <section class="panel" aria-label="Descripción y evidencia">
+            <div class="campo">
+              <label for="descripcion">Describe la situación <span class="sr-only">(obligatorio)</span></label>
+              <textarea id="descripcion" name="descripcion" rows="6" aria-describedby="ayuda-desc cuenta err-descripcion"></textarea>
+              <p class="hint" id="ayuda-desc">Mínimo 30 caracteres. Cuenta qué ocurrió, dónde y cuándo.</p>
+              <p class="cuenta" id="cuenta" aria-live="off"></p>
+              <p class="error" id="err-descripcion" aria-live="polite" hidden></p>
+            </div>
+            <div class="campo">
+              <label for="enlace">Enlace de apoyo <span class="opt">(opcional)</span></label>
+              <input id="enlace" name="enlace" type="url" inputmode="url" placeholder="https://…" aria-describedby="err-enlace">
+              <p class="error" id="err-enlace" aria-live="polite" hidden></p>
+            </div>
+            <div class="campo">
+              <span class="etiqueta" id="et-archivo">Archivo o evidencia <span class="opt">(opcional)</span></span>
+              <div class="dropzone">
+                <input class="sr-only" id="archivo" name="archivo" type="file" accept=".pdf,.png,.jpg,.jpeg,.webp,.doc,.docx,.xls,.xlsx,.csv,.txt" aria-describedby="ayuda-archivo err-archivo">
+                <label class="dropzone__in" for="archivo">
+                  <span data-icon="clip"></span>
+                  <span><strong>Arrastra un archivo</strong> o haz clic para adjuntar</span>
+                  <span class="small">PDF, imágenes, hojas de cálculo o texto · máx. 5 MB</span>
+                </label>
+              </div>
+              <div class="archivo-info" id="archivo-info" hidden></div>
+              <p class="hint" id="ayuda-archivo">En esta demostración el archivo no se sube a ningún servidor.</p>
+              <p class="error" id="err-archivo" aria-live="polite" hidden></p>
+            </div>
+          </section>
+
+          <section class="panel" aria-label="Datos de contacto y envío">
+            <div class="campo">
+              <label for="nombre">Nombre <span class="opt">(opcional)</span></label>
+              <input id="nombre" name="nombre" type="text" autocomplete="name" placeholder="Puedes usar un seudónimo">
+            </div>
+            <div class="campo">
+              <label for="correo">Correo electrónico <span class="opt">(opcional)</span></label>
+              <input id="correo" name="correo" type="email" autocomplete="email" placeholder="nombre@dominio.mx" aria-describedby="err-correo">
+              <p class="error" id="err-correo" aria-live="polite" hidden></p>
+            </div>
+            <div class="campo">
+              <label for="mensaje">Mensaje adicional <span class="opt">(opcional)</span></label>
+              <textarea id="mensaje" name="mensaje" rows="3" style="min-height:5rem"></textarea>
+            </div>
+            <details class="privacidad">
+              <summary>Aviso de demostración</summary>
+              <p>Este prototipo no tiene backend. Tus datos se procesan solo en tu navegador para mostrarte un borrador; no se transmiten, no se almacenan y se pierden al cerrar o recargar la página. Si el proyecto se publica, este aviso deberá sustituirse por un aviso de privacidad real.</p>
+            </details>
+            <div class="campo" style="margin-bottom:0">
+              <label class="check" for="consentimiento">
+                <input id="consentimiento" name="consentimiento" type="checkbox" aria-describedby="err-consentimiento">
+                <span>He leído el aviso de demostración: entiendo que mi propuesta no se envía ni se guarda. <span class="sr-only">(obligatorio)</span></span>
+              </label>
+              <p class="error" id="err-consentimiento" aria-live="polite" hidden></p>
+            </div>
+            <div class="form-acciones">
+              <button class="btn btn-primario" type="submit">Preparar borrador <span data-icon="flecha"></span></button>
+            </div>
+          </section>
+        </form>
+
+        <section class="confirmacion" id="confirmacion" tabindex="-1" aria-labelledby="titulo-conf" hidden>
+          <h2 id="titulo-conf">Tu borrador está listo (aún no se ha enviado)</h2>
+          <p><strong>Nada se envió ni se guardó:</strong> este sitio es una demostración y no tiene servidor. Puedes copiar o descargar el texto y mandarlo tú por otro medio.</p>
+          <pre id="resumen-envio" tabindex="0" aria-label="Borrador de tu propuesta"></pre>
+          <div class="btn-row" style="margin-top:0">
+            <button class="btn btn-primario" type="button" id="btn-descargar"><span data-icon="descargar"></span> Descargar .txt</button>
+            <button class="btn btn-borde" type="button" id="btn-copiar"><span data-icon="copiar"></span> Copiar texto</button>
+            <button class="btn btn-borde" type="button" id="btn-otra">Preparar otra</button>
+          </div>
+          <p class="copiado" id="copiado" role="status"></p>
+        </section>
+
+        <div class="aviso" style="margin-top:2rem">
+          <p><strong>¿Prefieres escribirnos?</strong> Contacto de ejemplo: contacto@voz.example. Las redes sociales del proyecto se anunciarán en <a href="nosotros.html#contacto">Nosotros</a> cuando existan.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-in">
+      <div class="footer-brand">
+        <a class="logo" href="index.html" aria-label="VOZ — volver al inicio">
+          <span class="logo__word">VOZ</span>
+          <span class="logo__tag">Lo que nadie está contando</span>
+        </a>
+        <p>Periodismo e investigación ciudadana para cuestionar lo cotidiano, con fuentes que puedes consultar.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Pie de página">
+        <h2 class="footer-h">Explora</h2>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="investigaciones.html">Investigaciones</a></li>
+          <li><a href="evidencias.html">Evidencias</a></li>
+          <li><a href="participa.html">Participa</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+        </ul>
+      </nav>
+      <div class="footer-contacto">
+        <h2 class="footer-h">Contacto</h2>
+        <p>contacto@voz.example</p>
+        <p class="small">Correo de ejemplo: se sustituirá por el real al publicar el proyecto.</p>
+        <p><a href="nosotros.html#contacto">Más datos de contacto</a></p>
+      </div>
+    </div>
+    <div class="container footer-base">
+      <p>© <span data-anio>2026</span> VOZ · Prototipo universitario de demostración. El contenido editorial es ilustrativo y no contiene hallazgos verificados.</p>
+      <a href="index.html">← Volver al inicio</a>
+      <a href="#top">Volver arriba ↑</a>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
