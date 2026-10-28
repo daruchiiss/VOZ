@@ -10,3 +10,15 @@ body {
   color: #3A2826;             /* Color de texto principal */
   background-color: #FFF0DE;  /* Color crema de fondo */
 }
+/* Títulos */
+h1, h2, h3, h4 {
+  font-family: Georgia, serif;
+  color: #694A47;             /* Color café */
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+h1 { font-size: 36px; }
+h2 { font-size: 28px; }
+h3 { font-size: 20px; }
+p  { margin-top: 0; margin-bottom: 16px; }
