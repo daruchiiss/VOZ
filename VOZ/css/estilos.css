@@ -40,29 +40,39 @@ p  { margin-top: 0; margin-bottom: 16px; }
   top: 10px;
 }
 
-/* Estilo base para botones con ícono */
-.icon-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: transparent;
-  color: #694A47;             /* Color café */
-  border: 2px solid transparent;
+/* Asegurar que el botón de búsqueda se muestre y tenga estilo */
+.search-btn {
+  display: inline-flex !important; /* Fuerza a que se vea el botón */
   cursor: pointer;
-  font: inherit;
 }
 
-.icon-btn:hover {
-  border-color: #694A47;
-  background-color: #FFF8EE;  /* Fondo crema claro al pasar el mouse */
+/* Estilo simple para la ventana modal que se abrirá */
+dialog.buscador {
+  border: 2px solid #694A47;
+  border-radius: 12px;
+  background-color: #FFF8EE;
+  padding: 20px;
+  max-width: 500px;
+  width: 90%;
+  margin: 50px auto;
 }
 
-/* Ocultar el botón de menú en pantallas grandes (computadoras) */
-.menu-toggle {
-  display: none;
+dialog::backdrop {
+  background-color: rgba(63, 43, 41, 0.6);
+}
+
+.buscador__form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.buscador__form input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 2px solid #8A6B67;
+  border-radius: 6px;
+  font-size: 16px;
 }
 
 /* enlaces e imagenes */
@@ -348,17 +358,30 @@ input:focus, select:focus, textarea:focus {
   font-size: 14px;
 }
 
-@media (max-width: 768px) {
-  /* Cambiamos las columnas a una sola fila vertical en celulares */
-  .header-in,
-  .hero-grid,
-  .page-hero__grid,
-  .banner,
-  .footer-in {
-    flex-direction: column;
-    align-items: flex-start;
+/* Reglas para móviles y pantallas pequeñas */
+@media (max-width: 860px) {
+  
+  /* 1. Ocultar el menú de navegación por defecto en móviles */
+  .nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #FFF0DE;
+    border-bottom: 3px double #694A47;
+    padding: 10px 20px;
+    z-index: 99;
   }
 
-  h1 { font-size: 28px; }
-  h2 { font-size: 22px; }
+  /* 2. MOSTRAR EL MENÚ cuando el JS le agrega la clase 'is-open' */
+  .nav.is-open {
+    display: block !important;
+  }
+
+  /* Estilos para que los enlaces se vean en lista vertical */
+  .nav.is-open ul {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
