@@ -22,3 +22,41 @@ h1 { font-size: 36px; }
 h2 { font-size: 28px; }
 h3 { font-size: 20px; }
 p  { margin-top: 0; margin-bottom: 16px; }
+
+/* enlaces e imagenes */
+
+a {
+  color: #2C6268;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #694A47;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Elementos secundarios */
+.muted { color: #6B5552; }
+.small { font-size: 14px; }
+
+.eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #3F2B29;
+  background-color: #96C1C5;
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
