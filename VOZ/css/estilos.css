@@ -201,3 +201,46 @@ img {
 .banner--cafe h2, .banner--cafe h3 {
   color: #FFF0DE;
 }
+
+.chip, .etq {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 4px;
+  border: 1px solid #3F2B29;
+}
+
+.etq--hecho {
+  background-color: #96C1C5;
+  color: #3F2B29;
+}
+
+.etq--testimonio {
+  background-color: #F5DFC3;
+  color: #3F2B29;
+}
+
+.filtros {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.filtro {
+  background-color: #FFF8EE;
+  border: 2px solid #694A47;
+  padding: 6px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.filtro:hover, .filtro[aria-pressed="true"] {
+  background-color: #694A47;
+  color: #FFF0DE;
+}
