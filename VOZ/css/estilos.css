@@ -23,6 +23,48 @@ h2 { font-size: 28px; }
 h3 { font-size: 20px; }
 p  { margin-top: 0; margin-bottom: 16px; }
 
+/* Ocultar el enlace de salto fuera de la pantalla */
+.skip {
+  position: absolute;
+  top: -100px;
+  left: 10px;
+  background-color: #694A47;
+  color: #FFF0DE;
+  padding: 8px 12px;
+  border-radius: 6px;
+  z-index: 1000;
+}
+
+/* Mostrarlo únicamente cuando se navega con el teclado (Tab) */
+.skip:focus {
+  top: 10px;
+}
+
+/* Estilo base para botones con ícono */
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: transparent;
+  color: #694A47;             /* Color café */
+  border: 2px solid transparent;
+  cursor: pointer;
+  font: inherit;
+}
+
+.icon-btn:hover {
+  border-color: #694A47;
+  background-color: #FFF8EE;  /* Fondo crema claro al pasar el mouse */
+}
+
+/* Ocultar el botón de menú en pantallas grandes (computadoras) */
+.menu-toggle {
+  display: none;
+}
+
 /* enlaces e imagenes */
 
 a {
