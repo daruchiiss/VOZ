@@ -60,3 +60,144 @@ img {
   border-radius: 4px;
   margin-bottom: 12px;
 }
+
+/* cabecera y nav*/
+.site-header {
+  position: sticky;
+  top: 0;
+  background-color: #FFF0DE;
+  border-bottom: 3px solid #694A47;
+  padding: 10px 0;
+  z-index: 100;
+}
+
+.header-in {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  text-decoration: none;
+  color: #694A47;
+  font-family: Georgia, serif;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.nav ul {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #694A47;
+  padding: 5px;
+}
+
+.nav a:hover,
+.nav a[aria-current="page"] {
+  color: #3F2B29;
+  border-bottom: 3px solid #96C1C5;
+}
+
+/*botonoes*/
+
+.btn {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 20px;
+  text-decoration: none;
+  border: 2px solid #694A47;
+  cursor: pointer;
+  text-align: center;
+}
+
+.btn-primario {
+  background-color: #694A47;
+  color: #FFF0DE;
+}
+
+.btn-primario:hover {
+  background-color: #3F2B29;
+}
+
+.btn-borde {
+  background-color: transparent;
+  color: #694A47;
+}
+
+.btn-borde:hover {
+  background-color: #694A47;
+  color: #FFF0DE;
+}
+
+.btn-acento {
+  background-color: #96C1C5;
+  color: #3F2B29;
+  border-color: #3F2B29;
+}
+
+.hero, .page-hero {
+  padding: 40px 0;
+  border-bottom: 2px solid #694A47;
+}
+
+.hero-grid, .page-hero__grid {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.hero-grid > div, .page-hero__grid > div {
+  flex: 1;
+}
+
+.section {
+  padding: 40px 0;
+}
+
+.sec-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 2px solid #694A47;
+  padding-top: 15px;
+  margin-bottom: 20px;
+}
+
+.ph {
+  background-color: #DCEBEC;
+  border: 2px dashed #694A47;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Banners destacados */
+.banner {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  border: 2px solid #694A47;
+  border-radius: 10px;
+  background-color: #DCEBEC;
+  margin-bottom: 20px;
+}
+
+.banner--cafe {
+  background-color: #694A47;
+  color: #FFF0DE;
+}
+
+.banner--cafe h2, .banner--cafe h3 {
+  color: #FFF0DE;
+}
