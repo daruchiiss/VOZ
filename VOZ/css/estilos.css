@@ -244,3 +244,79 @@ img {
   background-color: #694A47;
   color: #FFF0DE;
 }
+.panel {
+  background-color: #FFF8EE;
+  border: 2px solid #694A47;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.campo {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #3F2B29;
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #8A6B67;
+  border-radius: 6px;
+  background-color: #FFFFFF;
+  font-size: 16px;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #3F2B29;
+}
+
+.site-footer {
+  background-color: #694A47;
+  color: #FFF0DE;
+  padding: 40px 0 20px;
+  margin-top: 40px;
+}
+
+.site-footer a {
+  color: #FFF0DE;
+}
+
+.footer-in {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.footer-base {
+  border-top: 1px solid rgba(255, 240, 222, 0.3);
+  padding-top: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  /* Cambiamos las columnas a una sola fila vertical en celulares */
+  .header-in,
+  .hero-grid,
+  .page-hero__grid,
+  .banner,
+  .footer-in {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  h1 { font-size: 28px; }
+  h2 { font-size: 22px; }
+}
