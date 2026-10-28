@@ -146,4 +146,125 @@ if (contenedorRecientes) {
   contenedorRecientes.innerHTML = contenidoHTML;
 }
 
+//Filtro de investigaciones
 
+var contenedorGrid = document.querySelector('#grid-inv');
+var campoBuscar = document.querySelector('#buscar-inv');
+var botonesFiltro = document.querySelectorAll('#filtros [data-cat]');
+var textoConteo = document.querySelector('#conteo-inv');
+var mensajeVacio = document.querySelector('#vacio-inv');
+
+var categoriaSeleccionada = 'todos';
+
+function actualizarListaInvestigaciones() {
+  if (!contenedorGrid) return;
+
+  var textoBusqueda = '';
+  if (campoBuscar) {
+    textoBusqueda = campoBuscar.value.toLowerCase().trim();
+  }
+
+  var resultadosHTML = '';
+  var contadorResultados = 0;
+
+  for (var k = 0; k < REPORTAJES.length; k++) {
+    var item = REPORTAJES[k];
+    var coincideCategoria = (categoriaSeleccionada === 'todos') || (item.categoria === categoriaSeleccionada);
+    
+    // Comprobar si el título o el resumen coinciden con la búsqueda
+    var coincideTexto = item.titulo.toLowerCase().indexOf(textoBusqueda) !== -1 ||
+                         item.resumen.toLowerCase().indexOf(textoBusqueda) !== -1;
+
+    if (coincideCategoria && coincideTexto) {
+      resultadosHTML += crearHTMLTarjeta(item);
+      contadorResultados++;
+    }
+  }
+
+  contenedorGrid.innerHTML = resultadosHTML;
+
+  // Actualizar mensajes y contadores
+  if (textoConteo) {
+    textoConteo.textContent = 'Mostrando ' + contadorResultados + ' de ' + REPORTAJES.length + ' investigaciones';
+  }
+
+  if (mensajeVacio) {
+    if (contadorResultados === 0) {
+      mensajeVacio.hidden = false;
+    } else {
+      mensajeVacio.hidden = true;
+    }
+  }
+}
+
+// Escuchar los clics en los botones de categorías
+for (var b = 0; b < botonesFiltro.length; b++) {
+  botonesFiltro[b].addEventListener('click', function () {
+    // Quitar la marca activa a todos los botones
+    for (var x = 0; x < botonesFiltro.length; x++) {
+      botonesFiltro[x].setAttribute('aria-pressed', 'false');
+    }
+    // Marcar solo el botón presionado
+    this.setAttribute('aria-pressed', 'true');
+    categoriaSeleccionada = this.getAttribute('data-cat');
+    actualizarListaInvestigaciones();
+  });
+}
+
+// Escuchar lo que escribe el usuario en el buscador
+if (campoBuscar) {
+  campoBuscar.addEventListener('input', function () {
+    actualizarListaInvestigaciones();
+  });
+}
+
+// Ejecutar la búsqueda al cargar la página
+actualizarListaInvestigaciones();
+
+var dialogoReportaje = document.querySelector('#reportaje');
+var cuerpoReportaje = document.querySelector('#rep-cuerpo');
+
+// Escuchar cuando el usuario hace clic en el enlace de una tarjeta
+document.addEventListener('click', function (evento) {
+  var elementoClic = evento.target;
+  
+  // Buscar si el clic fue dentro de un enlace con 'data-abrir'
+  if (elementoClic.getAttribute('data-abrir')) {
+    evento.preventDefault();
+    var slugReportaje = elementoClic.getAttribute('data-abrir');
+    
+    // Buscar el reportaje seleccionado
+    var reportajeEncontrado = null;
+    for (var m = 0; m < REPORTAJES.length; m++) {
+      if (REPORTAJES[m].slug === slugReportaje) {
+        reportajeEncontrado = REPORTAJES[m];
+        break;
+      }
+    }
+
+    // Si existe y la ventana modal está disponible en el HTML
+    if (reportajeEncontrado && dialogoReportaje && cuerpoReportaje) {
+      cuerpoReportaje.innerHTML = '<h2>' + reportajeEncontrado.titulo + '</h2>' +
+                                  '<p class="lead">' + reportajeEncontrado.resumen + '</p>' +
+                                  '<hr>' +
+                                  '<p>' + reportajeEncontrado.problema.join(' ') + '</p>';
+      
+      // Abrir el modal si el navegador lo soporta
+      if (typeof dialogoReportaje.showModal === 'function') {
+        dialogoReportaje.showModal();
+        document.body.classList.add('modal-abierto');
+      }
+    }
+  }
+});
+
+// Cerrar el diálogo al presionar botones de cerrar
+var botonesCerrar = document.querySelectorAll('[data-cerrar]');
+for (var c = 0; c < botonesCerrar.length; c++) {
+  botonesCerrar[c].addEventListener('click', function () {
+    if (dialogoReportaje && typeof dialogoReportaje.close === 'function') {
+      dialogoReportaje.close();
+      document.body.classList.remove('modal-abierto');
+    }
+  });
+}
